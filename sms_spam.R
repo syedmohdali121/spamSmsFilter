@@ -52,6 +52,9 @@ sms_train_labels <- sms_raw[1:4169,]$type
 sms_test_labels <- sms_raw[4170:5559,]$type
 
 library(wordcloud)
+#subset
+spam <- subset(sms_raw, type == "spam")
+ham <- subset(sms_raw, type == "ham")
 
 #visualize word cloud
 wordcloud(spam$text, max.words = 100, random.order = F)
